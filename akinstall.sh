@@ -143,37 +143,33 @@ if [ "$AKVERSION" = 1 ] ; then
 fi
 
 # --------------------------------------------------
-# yokohiro - 007.010.01.02
+# xiaoguai475 - v1249
 # --------------------------------------------------
-if [ "$AKVERSION" = 2 ] ; then
-	cd "/root/hxsy"
-	wget --no-check-certificate "https://raw.githubusercontent.com/haruka98/ak_oneclick_installer/master/yokohiro_007_010_01_02" -O "yokohiro_007_010_01_02"
-	chmod 777 yokohiro_007_010_01_02
-	. "/root/hxsy/yokohiro_007_010_01_02"
+if [ "$TSVERSION" = 1 ] ; then
+	cd "/root/ryuu"
+	wget --no-check-certificate "https://raw.githubusercontent.com/Hookarik/ak_ts_installer/master/xiaoguai475_v1249" -O "xiaoguai475_v1249"
+	chmod 777 xiaoguai475_v1249
+	. "/root/ryuu/xiaoguai475_v1249"
 	
 	# config files
 	wget --no-check-certificate "$MAINCONFIG" -O "config.zip"
 	unzip "config.zip"
 	rm -f "config.zip"
 	sed -i "s/xxxxxxxx/$DBPASS/g" "setup.ini"
-	sed -i "2i\\
-	export LC_ALL=C\\
-	" "start"
 	
 	# subservers
-	wget --no-check-certificate --load-cookies "/tmp/cookies.txt" "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate "https://docs.google.com/uc?export=download&id=$SUBSERVERSID" -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=$SUBSERVERSID" -O "server.zip" && rm -rf "/tmp/cookies.txt"
+	wget --no-check-certificate "$SUBSERVERSID" -O "server.zip"
 	unzip "server.zip"
 	rm -f "server.zip"
-	sed -i "s/192.168.178.59/$IP/g" "GatewayServer/setup.ini"
 	sed -i "s/xxxxxxxx/$DBPASS/g" "GatewayServer/setup.ini"
-	sed -i "s/192.168.178.59/$IP/g" "TicketServer/setup.ini"
-	sed -i "s/\xc0\xa8\xb2/$PATCHIP/g" "WorldServer/WorldServer"
-	sed -i "s/\xc0\xa8\xb2/$PATCHIP/g" "ZoneServer/ZoneServer"
-	
+	sed -i "s/\x44\x24\x0c\x28\x62\x34/\x44\x24\x0c\x08\x49\x40/g" "MissionServer/MissionServer"
+	sed -i "s/\x3d\xc0\xa8\xb2/\x3d$PATCHIP/g" "WorldServer/WorldServer"
+	sed -i "s/\x3d\xc0\xa8\xb2/\x3d$PATCHIP/g" "ZoneServer/ZoneServer"
+
 	# Data folder
-	wget --no-check-certificate --load-cookies "/tmp/cookies.txt" "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate "https://docs.google.com/uc?export=download&id=$DATAFOLDER" -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=$DATAFOLDER" -O "Data.zip" && rm -rf "/tmp/cookies.txt"
-	unzip "Data.zip" -d "Data"
-	rm -f "Data.zip"
+	wget --no-check-certificate "$DATAFOLDER" -O "data.zip"
+	unzip "data.zip" -d "data"
+	rm -f "data.zip"
 	
 	# SQL files
 	wget --no-check-certificate "$SQLFILES" -O "SQL.zip"
@@ -185,27 +181,24 @@ if [ "$AKVERSION" = 2 ] ; then
 	
 	# install postgresql database
 	service postgresql restart
-	sudo -u postgres psql -c "create database ffaccount encoding 'UTF8' template template0;"
-	sudo -u postgres psql -c "create database ffdb1 encoding 'UTF8' template template0;"
-	sudo -u postgres psql -c "create database ffmember encoding 'UTF8' template template0;"
-	sudo -u postgres psql -d ffaccount -c "\i '/root/hxsy/SQL/FFAccount.bak';"
-	sudo -u postgres psql -d ffdb1 -c "\i '/root/hxsy/SQL/FFDB1.bak';"
-	sudo -u postgres psql -d ffmember -c "\i '/root/hxsy/SQL/FFMember.bak';"
-	sudo -u postgres psql -d ffaccount -c "UPDATE worlds SET ip = '$IP' WHERE ip = '192.168.178.59';"
-	sudo -u postgres psql -d ffdb1 -c "UPDATE serverstatus SET ext_address = '$IP' WHERE ext_address = '192.168.178.59';"
+	sed -i "s/^version [0-9]*$//g" /root/ryuu/SQL/sk_schema_alter
+	sed -i "s/^version [0-9]*$//g" /root/ryuu/SQL/ska_schema_alter
+	sudo -u postgres psql -c "create database \"ARAccount\" encoding 'SQL_ASCII' template template0;"
+	sudo -u postgres psql -c "create database \"ARDB1\" encoding 'SQL_ASCII' template template0;"
+	sudo -u postgres psql -c "create database \"ARMember\" encoding 'SQL_ASCII' template template0;"
+	sudo -u postgres psql -d ARAccount -c "\i '/root/ryuu/SQL/ska_schema';"
+	sudo -u postgres psql -d ARAccount -c "\i '/root/ryuu/SQL/ska_schema_alter';"
+	sudo -u postgres psql -d ARDB1 -c "\i '/root/ryuu/SQL/sk_schema';"
+	sudo -u postgres psql -d ARDB1 -c "\i '/root/ryuu/SQL/sk_schema_alter';"
+	sudo -u postgres psql -d ARMember -c "\i '/root/ryuu/SQL/FFMember.bak';"
 	
 	# remove server setup files
-	rm -f yokohiro_007_010_01_02
-	
-	#set the server date to 2013
-	timedatectl set-ntp 0
-	date -s "$(date +'2013%m%d %H:%M')"
-	hwclock --systohc
+	rm -f xiaoguai475_v1249
 	
 	# setup info
-	VERSIONNAME="yokohiro - 007.010.01.02"
-	CREDITS="yokohiro, Eperty123 and WangWeiJing1262"
-	THREADLINK="https://forum.ragezone.com/threads/aura-kingdom-release-files-v7-content-110.1191652/"
+	VERSIONNAME="xiaoguai475 - v1249"
+	CREDITS="xiaoguai475"
+	THREADLINK="https://forum.ragezone.com/threads/release-x-legend-server-files-ffo-ffo2-aro-djo-dso-sdo.1217568/"
 fi
 
 if [ "$VERSIONNAME" = "NONE" ] ; then
