@@ -38,7 +38,7 @@ if [ "$INVAR" = "2" ] ; then
 fi
 
 # select server version
-echo -e "Select the version you want to install.\n1) xiaoguai475 - 015.001.01.16 (recommended)\n2) yokohiro - 007.010.01.02"
+echo -e "Select the version you want to install.\n1) xiaoguai475 - 015.001.01.16\n2) xiaoguai475 - v1249"
 read AKVERSION
 
 # make sure start / stop commands are working
