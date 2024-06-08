@@ -100,7 +100,7 @@ if [ "$AKVERSION" = 1 ] ; then
 	sed -i "s/xxxxxxxx/$DBPASS/g" "setup.ini"
 	
 	# subservers
-	wget --no-check-certificate --load-cookies "/tmp/cookies.txt" "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate "https://docs.google.com/uc?export=download&id=$SUBSERVERSID" -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=$SUBSERVERSID" -O "server.zip" && rm -rf "/tmp/cookies.txt"
+	wget --no-check-certificate "$SUBSERVERSID" -O "server.zip"
 	unzip "server.zip"
 	rm -f "server.zip"
 	sed -i "s/xxxxxxxx/$DBPASS/g" "GatewayServer/setup.ini"
@@ -109,7 +109,7 @@ if [ "$AKVERSION" = 1 ] ; then
 	sed -i "s/\x3d\xc0\xa8\xb2/\x3d$PATCHIP/g" "ZoneServer/ZoneServer"
 	
 	# Data folder
-	wget --no-check-certificate --load-cookies "/tmp/cookies.txt" "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate "https://docs.google.com/uc?export=download&id=$DATAFOLDER" -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=$DATAFOLDER" -O "Data.zip" && rm -rf "/tmp/cookies.txt"
+	wget --no-check-certificate --load-cookies "$DATAFOLDER" -O "Data.zip"
 	unzip "Data.zip" -d "Data"
 	rm -f "Data.zip"
 	
