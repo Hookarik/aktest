@@ -89,7 +89,7 @@ fi
 # --------------------------------------------------
 if [ "$AKVERSION" = 1 ] ; then
 	cd "/root/hxsy"
-	wget --no-check-certificate "https://raw.githubusercontent.com/zamotys/ak/main/akinstall.sh" -O "xiaoguai475_015_001_01_16"
+	wget --no-check-certificate "https://raw.githubusercontent.com/Hookarik/aktest/main/akinstall.sh" -O "xiaoguai475_015_001_01_16"
 	chmod 777 xiaoguai475_015_001_01_16
 	. "/root/hxsy/xiaoguai475_015_001_01_16"
 	
