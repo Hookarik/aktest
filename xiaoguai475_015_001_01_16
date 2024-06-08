@@ -1,12 +1,12 @@
 # xiaoguai475 - 015.001.01.16
 # config files
-MAINCONFIG="https://drive.google.com/uc?export=download&id=1LSPkXjbY9mTFeSPuAlqnyJQLGYYddC8S"
+MAINCONFIG="http://192.168.1.8/xiaoguai475_015_001_01_16/config.zip"
 
 # subservers
-SUBSERVERSID="1QOP2vwTwOgRYEZ_yWx2VIy66lpVYT9rf"
+SUBSERVERSID="http://192.168.1.8/xiaoguai475_015_001_01_16/server.zip"
 
 # Data folder
-DATAFOLDER="1a-niYNkrdfzwZOfubiYq71jJgLyiwKXU"
+DATAFOLDER="http://192.168.1.8/xiaoguai475_015_001_01_16/Data.zip"
 
 # SQL folder
-SQLFILES="https://drive.google.com/uc?export=download&id=10nJ-9hcL3dubfKDyRAU3UhMkf2o-SgcY"
+SQLFILES="http://192.168.1.8/xiaoguai475_015_001_01_16/SQL.zip"
