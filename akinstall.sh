@@ -104,9 +104,9 @@ if [ "$AKVERSION" = 1 ] ; then
 	unzip "server.zip"
 	rm -f "server.zip"
 	sed -i "s/xxxxxxxx/$DBPASS/g" "GatewayServer/setup.ini"
-	sed -i "s/\x44\x24\x0c\x28\x62\x34/\x44\x24\x0c\x08\x49\x40/g" "MissionServer/MissionServer"
-	sed -i "s/\x3d\xc0\xa8\xb2/\x3d$PATCHIP/g" "WorldServer/WorldServer"
-	sed -i "s/\x3d\xc0\xa8\xb2/\x3d$PATCHIP/g" "ZoneServer/ZoneServer"
+	sed -i "s/\x44\x24\x0c\x28\x62\x34/\x44\x24\x0c\x08\x49\x40/g" "/root/hxsy/MissionServer/MissionServer"
+	sed -i "s/\x3d\xc0\xa8\xb2/\x3d$PATCHIP/g" "/root/hxsy/WorldServer/WorldServer"
+	sed -i "s/\x3d\xc0\xa8\xb2/\x3d$PATCHIP/g" "/root/hxsy/ZoneServer/ZoneServer"
 	
 	# Data folder
 	wget --no-check-certificate --load-cookies "$DATAFOLDER" -O "Data.zip"
