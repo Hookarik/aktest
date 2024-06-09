@@ -38,7 +38,7 @@ if [ "$INVAR" = "2" ] ; then
 fi
 
 # select server version
-echo -e "Select the version you want to install.\n1) xiaoguai475 - 015.001.01.16\n2) xiaoguai475 - v1249"
+echo -e "Select the version you want to install.\n1) xiaoguai475 - 015.001.01.16"
 read AKVERSION
 
 # make sure start / stop commands are working
@@ -140,65 +140,6 @@ if [ "$AKVERSION" = 1 ] ; then
 	VERSIONNAME="xiaoguai475 - 015.001.01.16"
 	CREDITS="xiaoguai475"
 	THREADLINK="https://forum.ragezone.com/threads/aura-kingdom-released-files.1204666/"
-fi
-
-# --------------------------------------------------
-# xiaoguai475 - v1249
-# --------------------------------------------------
-if [ "$TSVERSION" = 1 ] ; then
-	cd "/root/ryuu"
-	wget --no-check-certificate "https://raw.githubusercontent.com/hookarik/aktest/master/xiaoguai475_v1249" -O "xiaoguai475_v1249"
-	chmod 777 xiaoguai475_v1249
-	. "/root/ryuu/xiaoguai475_v1249"
-	
-	# config files
-	wget --no-check-certificate "$MAINCONFIG" -O "config.zip"
-	unzip "config.zip"
-	rm -f "config.zip"
-	sed -i "s/xxxxxxxx/$DBPASS/g" "setup.ini"
-	
-	# subservers
-	wget --no-check-certificate "$SUBSERVERSID" -O "server.zip"
-	unzip "server.zip"
-	rm -f "server.zip"
-	sed -i "s/xxxxxxxx/$DBPASS/g" "GatewayServer/setup.ini"
-	sed -i "s/\x44\x24\x0c\x28\x62\x34/\x44\x24\x0c\x08\x49\x40/g" "MissionServer/MissionServer"
-	sed -i "s/\x3d\xc0\xa8\xb2/\x3d$PATCHIP/g" "WorldServer/WorldServer"
-	sed -i "s/\x3d\xc0\xa8\xb2/\x3d$PATCHIP/g" "ZoneServer/ZoneServer"
-
-	# Data folder
-	wget --no-check-certificate "$DATAFOLDER" -O "data.zip"
-	unzip "data.zip" -d "data"
-	rm -f "data.zip"
-	
-	# SQL files
-	wget --no-check-certificate "$SQLFILES" -O "SQL.zip"
-	unzip "SQL.zip" -d "SQL"
-	rm -f "SQL.zip"
-	
-	# set permissions
-	chmod 777 /root -R
-	
-	# install postgresql database
-	service postgresql restart
-	sed -i "s/^version [0-9]*$//g" /root/ryuu/SQL/sk_schema_alter
-	sed -i "s/^version [0-9]*$//g" /root/ryuu/SQL/ska_schema_alter
-	sudo -u postgres psql -c "create database \"ARAccount\" encoding 'SQL_ASCII' template template0;"
-	sudo -u postgres psql -c "create database \"ARDB1\" encoding 'SQL_ASCII' template template0;"
-	sudo -u postgres psql -c "create database \"ARMember\" encoding 'SQL_ASCII' template template0;"
-	sudo -u postgres psql -d ARAccount -c "\i '/root/ryuu/SQL/ska_schema';"
-	sudo -u postgres psql -d ARAccount -c "\i '/root/ryuu/SQL/ska_schema_alter';"
-	sudo -u postgres psql -d ARDB1 -c "\i '/root/ryuu/SQL/sk_schema';"
-	sudo -u postgres psql -d ARDB1 -c "\i '/root/ryuu/SQL/sk_schema_alter';"
-	sudo -u postgres psql -d ARMember -c "\i '/root/ryuu/SQL/FFMember.bak';"
-	
-	# remove server setup files
-	rm -f xiaoguai475_v1249
-	
-	# setup info
-	VERSIONNAME="xiaoguai475 - v1249"
-	CREDITS="xiaoguai475"
-	THREADLINK="https://forum.ragezone.com/threads/release-x-legend-server-files-ffo-ffo2-aro-djo-dso-sdo.1217568/"
 fi
 
 if [ "$VERSIONNAME" = "NONE" ] ; then
