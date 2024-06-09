@@ -8,3 +8,7 @@ chmod +x open_ports.sh
 ```shell
 ./open_ports.sh
 ```
+Archives for check: 
+FFAccount > world 
+FFDB1 > serverstatus 
+FFDB1 > reset_time
