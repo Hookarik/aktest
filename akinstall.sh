@@ -38,7 +38,7 @@ if [ "$INVAR" = "2" ] ; then
 fi
 
 # select server version
-echo -e "Select the version you want to install.\n1) xiaoguai475 - 015.001.01.16"
+echo -e "Select the version you want to install.\n1) xiaoguai475 - 015.001.01.16\n2) hookarik - 015.001.01.16"
 read AKVERSION
 
 # make sure start / stop commands are working
@@ -139,6 +139,64 @@ if [ "$AKVERSION" = 1 ] ; then
 	# setup info
 	VERSIONNAME="xiaoguai475 - 015.001.01.16"
 	CREDITS="xiaoguai475"
+	THREADLINK="https://forum.ragezone.com/threads/aura-kingdom-released-files.1204666/"
+fi
+
+# --------------------------------------------------
+# hookarik - 015.001.01.16
+# --------------------------------------------------
+if [ "$AKVERSION" = 2 ] ; then
+	cd "/root/hxsy"
+	wget --no-check-certificate "https://raw.githubusercontent.com/hookarik/aktest/master/hookarik_015_001_01_16" -O "hookarik_015_001_01_16"
+	chmod 777 hookarik_015_001_01_16
+	. "/root/hxsy/hookarik_015_001_01_16"
+	
+	# config files
+	wget --no-check-certificate "$MAINCONFIG" -O "config.zip"
+	unzip "config.zip"
+	rm -f "config.zip"
+	sed -i "s/xxxxxxxx/$DBPASS/g" "setup.ini"
+	
+	# subservers
+	wget --no-check-certificate "$SUBSERVERSID" -O "server.zip"
+	unzip "server.zip"
+	rm -f "server.zip"
+	sed -i "s/xxxxxxxx/$DBPASS/g" "GatewayServer/setup.ini"
+	sed -i "s/\x44\x24\x0c\x28\x62\x34/\x44\x24\x0c\x08\x49\x40/g" "MissionServer/MissionServer"
+	sed -i "s/\x3d\xc0\xa8\xb2/\x3d$PATCHIP/g" "WorldServer/WorldServer"
+	sed -i "s/\x3d\xc0\xa8\xb2/\x3d$PATCHIP/g" "ZoneServer/ZoneServer"
+	
+	# Data folder
+	wget --no-check-certificate "$DATAFOLDER" -O "Data.zip"
+	unzip "Data.zip" -d "Data"
+	rm -f "Data.zip"
+	
+	# SQL files
+	wget --no-check-certificate "$SQLFILES" -O "SQL.zip"
+	unzip "SQL.zip" -d "SQL"
+	rm -f "SQL.zip"
+	
+	# set permissions
+	chmod 777 /root -R
+	
+	# install postgresql database
+	service postgresql restart
+	sudo -u postgres psql -c "create database \"FFAccount\" encoding 'SQL_ASCII' template template0;"
+	sudo -u postgres psql -c "create database \"FFDB1\" encoding 'SQL_ASCII' template template0;"
+	sudo -u postgres psql -c "create database \"FFMember\" encoding 'SQL_ASCII' template template0;"
+	sudo -u postgres psql -d FFAccount -c "\i '/root/hxsy/SQL/FFAccount.bak';"
+	sudo -u postgres psql -d FFDB1 -c "\i '/root/hxsy/SQL/FFDB1.bak';"
+	sudo -u postgres psql -d FFMember -c "\i '/root/hxsy/SQL/FFMember.bak';"
+	sudo -u postgres psql -d FFAccount -c "UPDATE worlds SET ip = '$IP' WHERE ip = '192.168.178.59';"
+	sudo -u postgres psql -d FFDB1 -c "UPDATE serverstatus SET ext_address = '$IP' WHERE ext_address = '192.168.178.59';"
+	sudo -u postgres psql -d FFDB1 -c "UPDATE serverstatus SET int_address = '$IP' WHERE int_address = '192.168.178.59';"
+	
+	# remove server setup files
+	rm -f hookarik_015_001_01_16
+	
+	# setup info
+	VERSIONNAME="hookarik - 015.001.01.16"
+	CREDITS="Hookarik, AaronzitoBr and Kesz24"
 	THREADLINK="https://forum.ragezone.com/threads/aura-kingdom-released-files.1204666/"
 fi
 
