@@ -109,7 +109,7 @@ if [ "$AKVERSION" = 1 ] ; then
 	sed -i "s/\x3d\xc0\xa8\xb2/\x3d$PATCHIP/g" "ZoneServer/ZoneServer"
 	
 	# Data folder
-	wget --no-check-certificate --load-cookies "$DATAFOLDER" -O "Data.zip"
+	wget --no-check-certificate "$DATAFOLDER" -O "Data.zip"
 	unzip "Data.zip" -d "Data"
 	rm -f "Data.zip"
 	
