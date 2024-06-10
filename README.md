@@ -6,13 +6,13 @@ TS:
 ```shell
 wget --no-check-certificate -nv "https://raw.githubusercontent.com/Hookarik/aktest/master/tsinstall.sh" -O "tsinstall.sh"; chmod 777 "tsinstall.sh"; ./tsinstall.sh
 ```
-Enable Ports:
-```shell
-wget --no-check-certificate -nv "https://raw.githubusercontent.com/Hookarik/aktest/master/open_ports.sh" -O "open_ports.sh"; chmod 777 "open_ports.sh"; ./open_ports.sh
-```
 Server Status:
 ```shell
 wget --no-check-certificate -nv "https://raw.githubusercontent.com/Hookarik/aktest/master/status.sh" -O "status.sh"; chmod 777 status.sh
+```
+Enable Ports:
+```shell
+wget --no-check-certificate -nv "https://raw.githubusercontent.com/Hookarik/aktest/master/open_ports.sh" -O "open_ports.sh"; chmod 777 "open_ports.sh"; ./open_ports.sh
 ```
 Keep an eye on the database:
 ```shell
