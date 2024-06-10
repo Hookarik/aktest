@@ -109,9 +109,9 @@ if [ "$TSVERSION" = 1 ] ; then
 	sed -i "s/\x3d\xc0\xa8\xb2/\x3d$PATCHIP/g" "ZoneServer/ZoneServer"
 
 	# Data folder
-	wget --no-check-certificate "$DATAFOLDER" -O "data.zip"
-	unzip "data.zip" -d "data"
-	rm -f "data.zip"
+	wget --no-check-certificate "$DATAFOLDER" -O "Data.zip"
+	unzip "Data.zip" -d "data"
+	rm -f "Data.zip"
 	
 	# SQL files
 	wget --no-check-certificate "$SQLFILES" -O "SQL.zip"
