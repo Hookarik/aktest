@@ -89,7 +89,7 @@ fi
 # --------------------------------------------------
 if [ "$TSVERSION" = 1 ] ; then
 	cd "/root/ryuu"
-	wget --no-check-certificate "https://raw.githubusercontent.com/Hookarik/ak_ts_installer/master/xiaoguai475_v1249" -O "xiaoguai475_v1249"
+	wget --no-check-certificate "https://raw.githubusercontent.com/hookarik/aktest/master/xiaoguai475_v1249" -O "xiaoguai475_v1249"
 	chmod 777 xiaoguai475_v1249
 	. "/root/ryuu/xiaoguai475_v1249"
 	
