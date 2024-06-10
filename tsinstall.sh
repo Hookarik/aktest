@@ -110,7 +110,7 @@ if [ "$TSVERSION" = 1 ] ; then
 
 	# Data folder
 	wget --no-check-certificate "$DATAFOLDER" -O "Data.zip"
-	unzip "Data.zip" -d "data"
+	unzip "Data.zip" -d "Data"
 	rm -f "Data.zip"
 	
 	# SQL files
