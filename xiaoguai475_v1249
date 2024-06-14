@@ -1,12 +1,12 @@
 # xiaoguai475 - v1249
 # config files
-MAINCONFIG="http://192.168.1.7/xiaoguai475_v1249/config.zip"
+MAINCONFIG="http://192.168.1.5/xiaoguai475_v1249/config.zip"
 
 # subservers
-SUBSERVERSID="http://192.168.1.7/xiaoguai475_v1249/server.zip"
+SUBSERVERSID="http://192.168.1.5/xiaoguai475_v1249/server.zip"
 
 # Data folder
-DATAFOLDER="http://192.168.1.7/xiaoguai475_v1249/Data.zip"
+DATAFOLDER="http://192.168.1.5/xiaoguai475_v1249/Data.zip"
 
 # SQL folder
-SQLFILES="http://192.168.1.7/xiaoguai475_v1249/SQL.zip"
+SQLFILES="http://192.168.1.5/xiaoguai475_v1249/SQL.zip"
