@@ -1,12 +1,12 @@
 # hookarik - 015.001.01.16
 # config files
-MAINCONFIG="http://192.168.1.8/hookarik_015_001_01_16/config.zip"
+MAINCONFIG="http://192.168.1.7/hookarik_015_001_01_16/config.zip"
 
 # subservers
-SUBSERVERSID="http://192.168.1.8/hookarik_015_001_01_16/server.zip"
+SUBSERVERSID="http://192.168.1.7/hookarik_015_001_01_16/server.zip"
 
 # Data folder
-DATAFOLDER="http://192.168.1.8/hookarik_015_001_01_16/Data.zip"
+DATAFOLDER="http://192.168.1.7/hookarik_015_001_01_16/Data.zip"
 
 # SQL folder
-SQLFILES="http://192.168.1.8/hookarik_015_001_01_16/SQL.zip"
+SQLFILES="http://192.168.1.7/hookarik_015_001_01_16/SQL.zip"
