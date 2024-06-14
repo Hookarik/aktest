@@ -123,16 +123,15 @@ if [ "$TSVERSION" = 1 ] ; then
 	
 	# install postgresql database
 	service postgresql restart
-	sed -i "s/^version [0-9]*$//g" /root/ryuu/SQL/sk_schema_alter
-	sed -i "s/^version [0-9]*$//g" /root/ryuu/SQL/ska_schema_alter
 	sudo -u postgres psql -c "create database \"ARAccount\" encoding 'SQL_ASCII' template template0;"
 	sudo -u postgres psql -c "create database \"ARDB1\" encoding 'SQL_ASCII' template template0;"
 	sudo -u postgres psql -c "create database \"ARMember\" encoding 'SQL_ASCII' template template0;"
-	sudo -u postgres psql -d ARAccount -c "\i '/root/ryuu/SQL/ska_schema';"
-	sudo -u postgres psql -d ARAccount -c "\i '/root/ryuu/SQL/ska_schema_alter';"
-	sudo -u postgres psql -d ARDB1 -c "\i '/root/ryuu/SQL/sk_schema';"
-	sudo -u postgres psql -d ARDB1 -c "\i '/root/ryuu/SQL/sk_schema_alter';"
-	sudo -u postgres psql -d ARMember -c "\i '/root/ryuu/SQL/FFMember.bak';"
+	sudo -u postgres psql -d ARAccount -c "\i '/root/ryuu/SQL/ARAccount.sql';"
+	sudo -u postgres psql -d ARDB1 -c "\i '/root/ryuu/SQL/ARDB1.sql';"
+	sudo -u postgres psql -d ARMember -c "\i '/root/ryuu/SQL/ARMember.sql';"
+	sudo -u postgres psql -d ARAccount -c "UPDATE worlds SET ip = '$IP' WHERE ip = '192.168.178.59';"
+	sudo -u postgres psql -d ARDB1 -c "UPDATE serverstatus SET ext_address = '$IP' WHERE ext_address = '192.168.178.59';"
+	sudo -u postgres psql -d ARDB1 -c "UPDATE serverstatus SET int_address = '$IP' WHERE int_address = '192.168.178.59';"
 	
 	# remove server setup files
 	rm -f xiaoguai475_v1249
