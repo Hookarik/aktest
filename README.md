@@ -6,6 +6,10 @@ TS:
 ```shell
 wget --no-check-certificate -nv "https://raw.githubusercontent.com/Hookarik/aktest/master/tsinstall.sh" -O "tsinstall.sh"; chmod 777 "tsinstall.sh"; ./tsinstall.sh
 ```
+DS:
+```shell
+wget --no-check-certificate -nv "https://raw.githubusercontent.com/Hookarik/aktest/master/dsinstall.sh" -O "dsinstall.sh"; chmod 777 "dsinstall.sh"; ./dsinstall.sh
+```
 Server Status:
 ```shell
 wget --no-check-certificate -nv "https://raw.githubusercontent.com/Hookarik/aktest/master/status.sh" -O "status.sh"; chmod 777 status.sh
