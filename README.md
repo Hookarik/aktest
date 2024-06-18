@@ -32,9 +32,5 @@ wget --no-check-certificate -nv "https://raw.githubusercontent.com/Hookarik/akte
 ```
 Keep an eye on the database:
 ```shell
-FFAccount > accounts
-FFAccount > world
-FFMember > tb_user
-FFDB1 > serverstatus 
-FFDB1 > reset_time
+accounts > world > tb_user > serverstatus > reset_time
 ```
