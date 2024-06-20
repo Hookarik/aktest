@@ -27,6 +27,10 @@ GF:
 ```shell
 wget --no-check-certificate -nv "https://raw.githubusercontent.com/Hookarik/aktest/master/gfinstall.sh" -O "gfinstall.sh"; chmod 777 "gfinstall.sh"; ./gfinstall.sh
 ```
+EE:
+```shell
+wget --no-check-certificate -nv "https://raw.githubusercontent.com/Hookarik/aktest/master/eeinstall.sh" -O "eeinstall.sh"; chmod 777 "eeinstall.sh"; ./eeinstall.sh
+```
 Server Status:
 ```shell
 wget --no-check-certificate -nv "https://raw.githubusercontent.com/Hookarik/aktest/master/status.sh" -O "status.sh"; chmod 777 status.sh
