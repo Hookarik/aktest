@@ -41,5 +41,5 @@ wget --no-check-certificate -nv "https://raw.githubusercontent.com/Hookarik/akte
 ```
 Keep an eye on the database:
 ```shell
-accounts > world > tb_user > serverstatus > reset_time
+accounts > world > tb_user > serverstatus > reset_time > player_characters
 ```
