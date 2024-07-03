@@ -1,12 +1,12 @@
 # twinsaga - 012.001.01.49
 # config files
-MAINCONFIG="http://192.168.1.4/twinsaga_012_001_01_49/config.zip"
+MAINCONFIG="http://192.168.1.9/twinsaga_012_001_01_49/config.zip"
 
 # subservers
-SUBSERVERSID="http://192.168.1.4/twinsaga_012_001_01_49/server.zip"
+SUBSERVERSID="http://192.168.1.9/twinsaga_012_001_01_49/server.zip"
 
 # Data folder
-DATAFOLDER="http://192.168.1.4/twinsaga_012_001_01_49/Data.zip"
+DATAFOLDER="http://192.168.1.9/twinsaga_012_001_01_49/Data.zip"
 
 # SQL folder
-SQLFILES="http://192.168.1.4/twinsaga_012_001_01_49/SQL.zip"
+SQLFILES="http://192.168.1.9/twinsaga_012_001_01_49/SQL.zip"
