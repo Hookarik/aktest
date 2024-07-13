@@ -9,7 +9,7 @@ The user of this code assumes all responsibility for ensuring compliance with an
 Please use this code responsibly and ethically.
 
 ## How to use?
-The script is intended for use on [debian 11](http://download.g0tmi1k.com/iso/Debian/). The command to download and run this script is the following:
+The script is intended for use on [debian11-server](http://download.g0tmi1k.com/iso/Debian/) or [debian11-desktop](https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/archive/11.7.0-live+nonfree/amd64/iso-hybrid/). The command to download and run this script is the following:
 
 AK:
 ```shell
