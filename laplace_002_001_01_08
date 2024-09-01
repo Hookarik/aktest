@@ -1,12 +1,12 @@
 # laplace - 002.001.01.08
 # config files
-MAINCONFIG="laplace_002_001_01_08/config.zip"
+MAINCONFIG="/root/laplace_002_001_01_08/config.zip"
 
 # subservers
-SUBSERVERSID="laplace_002_001_01_08/server.zip"
+SUBSERVERSID="/root/laplace_002_001_01_08/server.zip"
 
 # Data folder
-DATAFOLDER="laplace_002_001_01_08/Data.zip"
+DATAFOLDER="/root/laplace_002_001_01_08/Data.zip"
 
 # SQL folder
-SQLFILES="laplace_002_001_01_08/SQL.zip"
+SQLFILES="/root/laplace_002_001_01_08/SQL.zip"
