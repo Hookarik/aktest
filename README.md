@@ -31,6 +31,9 @@ ET:
 ```shell
 wget --no-check-certificate -nv "https://raw.githubusercontent.com/Hookarik/aktest/master/etinstall.sh" -O "etinstall.sh"; chmod 777 "etinstall.sh"; ./etinstall.sh
 ```
+```shell
+wget --no-check-certificate -nv "https://raw.githubusercontent.com/Hookarik/aktest/master/lpinstall.sh" -O "lpinstall.sh"; chmod 777 "lpinstall.sh"; ./lpinstall.sh
+```
 Server Status:
 ```shell
 wget --no-check-certificate -nv "https://raw.githubusercontent.com/Hookarik/aktest/master/status.sh" -O "status.sh"; chmod 777 status.sh
