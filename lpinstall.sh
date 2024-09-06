@@ -127,7 +127,6 @@ if [ "$LPVERSION" = 1 ] ; then
 	sudo -u postgres psql -c "create database \"LPDB1\" encoding 'SQL_ASCII' template template0;"
 	sudo -u postgres psql -c "create database \"LPMember\" encoding 'SQL_ASCII' template template0;"
 	sudo -u postgres psql -d LPAccount -c "\i '/root/lp/SQL/LPAccount.sql';"
-	sudo -u postgres psql -d LPAccount -c "\i '/root/lp/SQL/fortune_bag.sql';"
 	sudo -u postgres psql -d LPDB1 -c "\i '/root/lp/SQL/LPDB1.sql';"
 	sudo -u postgres psql -d LPMember -c "\i '/root/lp/SQL/LPMember.sql';"
 	sudo -u postgres psql -d LPAccount -c "UPDATE worlds SET ip = '$IP' WHERE ip = '192.168.178.59';"
