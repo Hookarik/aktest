@@ -1,12 +1,12 @@
 # laplace - 002.001.01.08
 # config files
-MAINCONFIG="http://192.168.1.2/retributzgames/server/laplace_002_001_01_08/config.zip"
+MAINCONFIG="http://192.168.1.6/retributzgames/server/laplace_002_001_01_08/config.zip"
 
 # subservers
-SUBSERVERSID="http://192.168.1.2/retributzgames/server/laplace_002_001_01_08/server.zip"
+SUBSERVERSID="http://192.168.1.6/retributzgames/server/laplace_002_001_01_08/server.zip"
 
 # Data folder
-DATAFOLDER="http://192.168.1.2/retributzgames/server/laplace_002_001_01_08/Data.zip"
+DATAFOLDER="http://192.168.1.6/retributzgames/server/laplace_002_001_01_08/Data.zip"
 
 # SQL folder
-SQLFILES="http://192.168.1.2/retributzgames/server/laplace_002_001_01_08/SQL.zip"
+SQLFILES="http://192.168.1.6/retributzgames/server/laplace_002_001_01_08/SQL.zip"
