@@ -1,12 +1,12 @@
 # grandfantasia - 006.761.80.80
 # config files
-MAINCONFIG="http://192.168.1.6/retributzgames/server/grandfantasia_006_761_80_80/config.zip"
+MAINCONFIG="http://192.168.1.7/retributzgames/server/grandfantasia_006_761_80_80/config.zip"
 
 # subservers
-SUBSERVERSID="http://192.168.1.6/retributzgames/server/grandfantasia_006_761_80_80/server.zip"
+SUBSERVERSID="http://192.168.1.7/retributzgames/server/grandfantasia_006_761_80_80/server.zip"
 
 # Data folder
-DATAFOLDER="http://192.168.1.6/retributzgames/server/grandfantasia_006_761_80_80/Data.zip"
+DATAFOLDER="http://192.168.1.7/retributzgames/server/grandfantasia_006_761_80_80/Data.zip"
 
 # SQL folder
-SQLFILES="http://192.168.1.6/retributzgames/server/grandfantasia_006_761_80_80/SQL.zip"
+SQLFILES="http://192.168.1.7/retributzgames/server/grandfantasia_006_761_80_80/SQL.zip"
