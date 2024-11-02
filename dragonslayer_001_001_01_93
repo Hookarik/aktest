@@ -1,12 +1,12 @@
 # dragonslayer - 001.001.01.93
 # config files
-MAINCONFIG="http://192.168.1.7/retributzgames/server/dragonslayer_001_001_01_93/config.zip"
+MAINCONFIG="http://retributzgames.com/server/dragonslayer_001_001_01_93/config.zip"
 
 # subservers
-SUBSERVERSID="http://192.168.1.7/retributzgames/server/dragonslayer_001_001_01_93/server.zip"
+SUBSERVERSID="http://retributzgames.com/server/dragonslayer_001_001_01_93/server.zip"
 
 # Data folder
-DATAFOLDER="http://192.168.1.7/retributzgames/server/dragonslayer_001_001_01_93/Data.zip"
+DATAFOLDER="http://retributzgames.com/server/dragonslayer_001_001_01_93/Data.zip"
 
 # SQL folder
-SQLFILES="http://192.168.1.7/retributzgames/server/dragonslayer_001_001_01_93/SQL.zip"
+SQLFILES="http://retributzgames.com/server/dragonslayer_001_001_01_93/SQL.zip"
