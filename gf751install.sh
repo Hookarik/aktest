@@ -105,8 +105,8 @@ if [ "$DSVERSION" = 1 ] ; then
 	rm -f "server.zip"
 	sed -i "s/xxxxxxxx/$DBPASS/g" "GatewayServer/setup.ini"
 	sed -i "s/\x44\x24\x0c\x28\x62\x34/\x44\x24\x0c\x08\x49\x40/g" "MissionServer/MissionServerGF"
-	sed -i "s/\x3d\x4b\xe7\x59/\x3d$PATCHIP/g" "WorldServer/WorldServerGF"
-	sed -i "s/\x3d\x9e\xe2\x2d/\x3d$PATCHIP/g" "ZoneServer/ZoneServerGF"
+	sed -i "s/\x3d\xc0\xa8\xb2/\x3d$PATCHIP/g" "WorldServer/WorldServerGF"
+	sed -i "s/\x3d\xc0\xa8\xb2/\x3d$PATCHIP/g" "ZoneServer/ZoneServerGF"
 
 	# Data folder
 	wget --no-check-certificate "$DATAFOLDER" -O "Data.zip"
