@@ -105,7 +105,6 @@ if [ "$DSVERSION" = 1 ] ; then
 	rm -f "server.zip"
 	sed -i "s/xxxxxxxx/$DBPASS/g" "GatewayServer/setup.ini"
 	sed -i "s/\x44\x24\x0c\x28\x62\x34/\x44\x24\x0c\x08\x49\x40/g" "MissionServer/MissionServerGF"
-	sed -i "s/\x3d\xc0\xa8\xb2/\x3d$PATCHIP/g" "WorldServer/WorldServerGF"
 	printf "\x3d\x$PATCHIP" | dd of="WorldServer/WorldServerGF" bs=1 seek=$((0x4BE759)) conv=notrunc
 	printf "\x3d\x$PATCHIP" | dd of="ZoneServer/ZoneServerGF" bs=1 seek=$((0x9EE22D)) conv=notrunc
 
