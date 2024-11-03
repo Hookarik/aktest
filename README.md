@@ -23,13 +23,9 @@ DS:
 ```shell
 wget --no-check-certificate -nv "https://raw.githubusercontent.com/Hookarik/aktest/master/dsinstall.sh" -O "dsinstall.sh"; chmod 777 "dsinstall.sh"; ./dsinstall.sh
 ```
-GF751:
+GF:
 ```shell
-wget --no-check-certificate -nv "https://raw.githubusercontent.com/Hookarik/aktest/master/gf751install.sh" -O "gf751install.sh"; chmod 777 "gf751install.sh"; ./gf751install.sh
-```
-GF761:
-```shell
-wget --no-check-certificate -nv "https://raw.githubusercontent.com/Hookarik/aktest/master/gf761install.sh" -O "gf761install.sh"; chmod 777 "gf761install.sh"; ./gf761install.sh
+wget --no-check-certificate -nv "https://raw.githubusercontent.com/Hookarik/aktest/master/gfinstall.sh" -O "gfinstall.sh"; chmod 777 "gfinstall.sh"; ./gfinstall.sh
 ```
 ET:
 ```shell
