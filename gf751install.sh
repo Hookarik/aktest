@@ -69,7 +69,7 @@ sed -i "s+host    all             all             127.0.0.1/32            md5+ho
 sudo -u postgres psql -c "ALTER user postgres WITH password '$DBPASS';"
 
 # ready ip for hexpatch
-PATCHIP=$(printf '%02x%02x%02x' $(echo "$IP" | grep -o [0-9]* | head -n1) $(echo "$IP" | grep -o [0-9]* | head -n2 | tail -n1) $(echo "$IP" | grep -o [0-9]* | head -n3 | tail -n1))
+PATCHIP=$(printf '\\x%02x\\x%02x\\x%02x\n' $(echo "$IP" | grep -o [0-9]* | head -n1) $(echo "$IP" | grep -o [0-9]* | head -n2 | tail -n1) $(echo "$IP" | grep -o [0-9]* | head -n3 | tail -n1))
 
 # set version name
 VERSIONNAME="NONE"
@@ -105,8 +105,8 @@ if [ "$DSVERSION" = 1 ] ; then
 	rm -f "server.zip"
 	sed -i "s/xxxxxxxx/$DBPASS/g" "GatewayServer/setup.ini"
 	sed -i "s/\x44\x24\x0c\x28\x62\x34/\x44\x24\x0c\x08\x49\x40/g" "MissionServer/MissionServerGF"
-	printf "\x3d\x$PATCHIP" | dd of="WorldServer/WorldServerGF" bs=1 seek=$((0x4BE759)) conv=notrunc
-	printf "\x3d\x$PATCHIP" | dd of="ZoneServer/ZoneServerGF" bs=1 seek=$((0x9EE22D)) conv=notrunc
+	sed -i "s/\x3d\x4b\xe7\x59/\x3d$PATCHIP/g" "WorldServer/WorldServerGF"
+	sed -i "s/\x3d\x9e\xe2\x2d/\x3d$PATCHIP/g" "ZoneServer/ZoneServerGF"
 
 	# Data folder
 	wget --no-check-certificate "$DATAFOLDER" -O "Data.zip"
